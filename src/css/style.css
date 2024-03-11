@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
 
-  background: url(/public/background.jpeg);
+  background: url(../assets/background.jpeg);
   min-width: 500px;
   width: 100%;
   

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import WeatherAPI from "./WeatherAPI";
 import axios from 'axios';
 
 
@@ -27,7 +28,7 @@ function App() {
   return (
     <>
     <div className='container'>
-      
+      <WeatherAPI/>
     </div>
       
       
