@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-import Weather from './Weather';
+
 
 function App() {
   const [city, setCity] = useState('');
