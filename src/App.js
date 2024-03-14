@@ -1,13 +1,18 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import WeatherAPI from "./WeatherAPI";
 import axios from 'axios';
+import Location from './Location';
+import WeatherInfo from './WeatherInfo';
 
 
 function App() {
+  //used to store the city/location entered by the user
   const [city, setCity] = useState('');
+
+  //used to store the weatherData from the API
   const [weatherData, setWeatherData] = useState(null);
   
-  
+    //fecthing data from API based on user input every time a new city is entered
     const fetchData = useCallback(async () => {
       try {
         const response = await axios.get(
@@ -19,6 +24,7 @@ function App() {
         console.error(error);
       }
     }, [city]);
+
     useEffect(() => {
       fetchData();
     }, [fetchData]);
@@ -28,7 +34,8 @@ function App() {
   return (
     <>
     <div className='container'>
-      <WeatherAPI/>
+      <Location data={fetchData} city={city} setCity={setCity}></Location>
+      <WeatherInfo weatherData={weatherData}></WeatherInfo>
     </div>
       
       
