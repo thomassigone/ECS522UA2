@@ -1,16 +1,16 @@
 import React, { useEffect, useState} from 'react';
 
-import loadingImg from './assets/loading-gif.gif';
-import cloudImg from './assets/cloudimg.png';
-import visibilitImg from './assets/visibility.png';
-import wingImg from './assets/outline.png';
-import sunriseImg from './assets/sunrise.png';
-import sunsetImg from './assets/Vector.png';
-import sunnyImg from './assets/sunny.png';
-import snowImg from './assets/snow.png';
-import stormImg from './assets/storm.png';
-import moonImg from './assets/moon.png';
-import rainImg from './assets/rain.png';
+import loadingImg from '../assets/loading-gif.gif';
+import cloudImg from '../assets/cloudimg.png';
+import visibilitImg from '../assets/visibility.png';
+import wingImg from '../assets/outline.png';
+import sunriseImg from '../assets/sunrise.png';
+import sunsetImg from '../assets/Vector.png';
+import sunnyImg from '../assets/sunny.png';
+import snowImg from '../assets/snow.png';
+import stormImg from '../assets/storm.png';
+import moonImg from '../assets/moon.png';
+import rainImg from '../assets/rain.png';
 
 function WeatherInfo(props){
     //useEffect to display the current weather
@@ -40,7 +40,7 @@ function WeatherInfo(props){
         } else if (description.includes('cloud')) {
           setImage(cloudImg);
         } else if (description.includes('rain')) {
-          setImage(null);
+          setImage(rainImg);
         } else {
           // Default image if description doesn't match any condition
           setImage(loadingImg);

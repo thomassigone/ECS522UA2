@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import WeatherAPI from "./WeatherAPI";
 import axios from 'axios';
 import Location from './Location';
-import WeatherInfo from './WeatherInfo';
+import WeatherInfo from './Components/WeatherInfo';
 
 
 function App() {
@@ -37,9 +37,7 @@ function App() {
       <Location data={fetchData} city={city} setCity={setCity}></Location>
       <WeatherInfo weatherData={weatherData}></WeatherInfo>
     </div>
-      
-      
-      </>
+    </>
     
   );
 }
