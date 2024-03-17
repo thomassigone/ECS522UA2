@@ -7,7 +7,7 @@ import axios from 'axios';
 function App() {
   const [city, setCity] = useState('london');
   const [weatherData, setWeatherData] = useState(null);
-  const [alertData, setAlertData] = useState([]);
+  const [alertData, setAlertData] = useState({});
   
 
   const fetchData = useCallback(async () => {
@@ -24,7 +24,11 @@ function App() {
     useEffect(() => {
       fetchData();
       axios.get(`https://api.weatherapi.com/v1/forecast.json?key=aec898c8a5b64dc09d0195725241203&q=${city}&aqi=no&alerts=yes`)
-      .then(response => setAlertData(response.data.alerts.alert))
+      .then(response => {
+        if(response.data.alerts.alert.length !== 0) {
+          setAlertData(response.data.alerts.alert[0])
+        };
+      })
       .catch(error => console.error(error));
     }, [fetchData]);
 
@@ -33,10 +37,8 @@ function App() {
     <>
     <div className='container'>
       <WeatherAPI/>
-      <Provisions alerts={alertData}/>
+      <Provisions alert={alertData} showMockDataAlert={true}/>
     </div>
-      
-      
       </>
     
   );
