@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import WeatherAPI from "./WeatherAPI";
 import Provisions from "./components/Provisions";
+import Forecast from "./components/Forecast";
 import axios from 'axios';
 
 
@@ -9,6 +10,9 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [alertData, setAlertData] = useState([]);
   
+  const changeCity = (newCity) => {
+    setCity(newCity);
+  };
 
   const fetchData = useCallback(async () => {
       try {
@@ -32,12 +36,11 @@ function App() {
   return (
     <>
     <div className='container'>
-      <WeatherAPI/>
+      <WeatherAPI onCityChange={changeCity}/>
       <Provisions alerts={alertData}/>
+      <Forecast city={city}/>
     </div>
-      
-      
-      </>
+    </>
     
   );
 }

@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 
-const WeatherAPI = () => {
+const WeatherAPI = ({onCityChange}) => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
 
@@ -28,6 +28,7 @@ const WeatherAPI = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    onCityChange(city);
     fetchData();
   };
 
