@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
+import '../css/forecast.css';
 
 const Forecast = ({city}) => {
     //const [city, setCity] = useState('');
@@ -23,30 +24,46 @@ const Forecast = ({city}) => {
 
     const formatDate = (timestamp) => {
         const date = new Date(timestamp*1000);
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        return `${day}/${month}`;
+        const weekDayIndex = date.getDay();
+        const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const weekDayString = weekDays[weekDayIndex];
+        return weekDayString;
     }
 
     return (
-    <div>
+    <>
+        <div className="forecast-box">
         {forecastData ? (
             <>
-                <h2>{forecastData[0].name}</h2>
-                {forecastData.map((forecast, index) => (
-                    <div key={index}>
-                        <p>Date: {formatDate(forecast.dt)}</p>
-                        <p>Lo temp: {forecast.temp.min}°C</p>
-                        <p>Hi temp: {forecast.temp.max}°C</p>
-                        <p>Rain chance : {forecast.pop*100}%</p>
-                        <p>Max Wind Speed : {forecast.speed}m/s</p>
-                    </div>
-                ))}
+                <ul className="forecast-headings">
+                        <li>Day</li>
+                        <li>Lo (°C)</li>
+                        <li>Hi (°C)</li>
+                        <li>Rain chance</li>
+                        <li>Wind (m/s)</li>
+                </ul>
+                <hr />
+                <div className="forecast-grid">
+                    {forecastData.map((forecast, index) => (
+                        <>
+                            <ul key={index} className="forecast-row">
+                                <li className="forecast-text">{index == 0 ? 'Today' : formatDate(forecast.dt)}</li>
+                                <li className="forecast-text">{forecast.temp.min}</li>
+                                <li className="forecast-text">{forecast.temp.max}</li>
+                                <li className="forecast-text">{forecast.pop*100}%</li>
+                                <li className="forecast-text">{forecast.speed}</li>
+                            </ul>
+                            {index != forecastData.length-1 && <hr />}
+                        </>
+                    ))}
+                </div>
             </>
         ) : (
             <p>Loading weather data...</p>
         )}
     </div>
+    </>   
+
     );
 };
 

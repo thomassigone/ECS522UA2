@@ -1,11 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import WeatherAPI from "./WeatherAPI";
 import Provisions from "./components/Provisions";
 import Forecast from "./components/Forecast";
+import WeatherInfo from './components/WeatherInfo';
 import axios from 'axios';
 import Location from './Location';
-import WeatherInfo from './Components/WeatherInfo';
-
 
 function App() {
   //used to store the city/location entered by the user
