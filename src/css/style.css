@@ -3,6 +3,7 @@
   flex-direction: column;
   background: linear-gradient(white, blue, black);
   align-items: center;
+
 }
 
 .container{
@@ -23,13 +24,22 @@
 
 .location-box{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 
+.location-icon{
+  height: 2em;
+  width: 1.8em;
+}
+
 .location{
+  width: 7em;
+  color: rgba(0, 0, 0, 0.62);
+  text-align: center;
+  font-family: Poppins;
   background-color: transparent;
-  color: black;
+  
   font-weight: bold;
   font-size: 2.5em;
   border: none;
@@ -43,7 +53,54 @@
   background: linear-gradient(180deg, rgba(255, 240, 227, 0.70) 0%, rgba(255, 203, 163, 0.70) 100%);
   height: auto;
   width: 80%;
-  max-width: 300px;
+  max-width: 450px;
   align-items: center;
+ 
 }
 
+.weather-icon{
+  margin-top: 10px;
+  height: 4.5em;
+  width: 5em;
+}
+
+.temperature-text, .weather-description-text{
+  color: #FFF;
+  font-family: Poppins;
+  margin: 0;
+  padding: 0;
+}
+
+.temperature-text{
+  font-size: 3em;
+}
+
+.weather-description-text{
+  font-size: 1.5em;
+}
+
+
+
+.weather-grid-container{
+   
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr; 
+  grid-template-rows: auto auto;    
+  gap: 10px;
+                        
+}
+
+.weather-grid-item{
+   
+  display: flex;
+  flex-direction: row;
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 1em;
+}
+
+.small-icon{
+  padding-top: 2px;
+  padding-right: 2px;
+}

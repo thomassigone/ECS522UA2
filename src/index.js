@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './css/index.css';
 import App from './App';
 import './css/style.css';
+import './css/hourlyWeather.css';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

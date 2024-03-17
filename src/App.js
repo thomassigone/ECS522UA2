@@ -2,10 +2,12 @@ import React, { useEffect, useState, useCallback } from 'react';
 import WeatherAPI from "./WeatherAPI";
 import Provisions from "./components/Provisions";
 import axios from 'axios';
-
+import Location from './Location';
+import WeatherInfo from './WeatherInfo';
+import HourlyWeather from './components/HourlyWeather'
 
 function App() {
-  const [city, setCity] = useState('london');
+  const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [alertData, setAlertData] = useState([]);
   
@@ -23,17 +25,26 @@ function App() {
     }, [city]);
     useEffect(() => {
       fetchData();
-      axios.get(`https://api.weatherapi.com/v1/forecast.json?key=aec898c8a5b64dc09d0195725241203&q=${city}&aqi=no&alerts=yes`)
-      .then(response => setAlertData(response.data.alerts.alert))
-      .catch(error => console.error(error));
+      // axios.get(`https://api.weatherapi.com/v1/forecast.json?key=aec898c8a5b64dc09d0195725241203&q=${city}&aqi=no&alerts=yes`)
+      // .then(response => setAlertData(response.data.alerts.alert))
+      // .catch(error => console.error(error));
     }, [fetchData]);
 
   
   return (
     <>
     <div className='container'>
-      <WeatherAPI/>
+      <Location data={fetchData} city={city} setCity={setCity}></Location>
+      <WeatherInfo weatherData={weatherData}></WeatherInfo>
+      <HourlyWeather/>
+    </div>
+    <div className='container'>
+      
+      {/* <WeatherAPI/> */}
       <Provisions alerts={alertData}/>
+    </div>
+    <div>
+      
     </div>
       
       
