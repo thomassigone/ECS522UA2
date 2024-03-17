@@ -43,12 +43,10 @@
 }
 
 #triangle{
-    background-image: url(../assets/Polygon1.png);
     width: 22px;
     height: 22px;
-    flex-shrink: 0;
     fill: linear-gradient(180deg, #FFF 40.5%, rgba(217, 217, 217, 0.00) 100%);
-    background-repeat: no-repeat;
+
 }
 
 #line{

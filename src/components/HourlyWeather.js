@@ -1,13 +1,15 @@
 import {useState} from 'react';
-import Rain from '../assets/rain.png'
+import Rain from '../assets/rain.png';
+import TrianleImg from "../assets/Polygon1.png";
 
 const length = 8;
 const iconArr = ListIcon();
 const timeArr = ListTime();
+const triangeArr = createTriangeArr();
 //const triangeArr = ListTriangle();
 
 // create an array for wether icon depending on the weather on every hour
-function ListIcon(){
+ function ListIcon(){
     let iconArr = []
     let icon = Rain;
     for(let i = 0; i < length; i++){
@@ -43,11 +45,37 @@ const timeObj = timeArr.map(
 })
 );
 
+function createTriangeArr (){
+    let triangeArr = [];
+    let icon = TrianleImg
+    let visibleIndex = 4;
+    for(let i = 0; i < length; i++){
+        if (i !== visibleIndex){
+            triangeArr.push(undefined);
+        }
+        else{
+            triangeArr[i] = (i, 0, <img src={icon} alt="triangle" className="triangle"/>);
+        }
+            
+    }
+    return triangeArr;
+}
+
+// change triangler array to object
+const triangleObj = triangeArr.map(
+    (figure, i) => ({
+    id: i,
+    title: figure
+})
+);
+
+console.log("Triangle", triangeArr)
+
 // display weather icons and hours
 function DisplayHourly(probs){
 
     return(
-        <div id = "iconSection">
+        <div id = "hourlySection">
             <div class = "row">
                 {probs.wIcon.map((wIcon) =>(
                     <div class = "column" key={wIcon.id}>
@@ -61,6 +89,15 @@ function DisplayHourly(probs){
                     <button class = 'time' key = {hour.id}> 
                         {hour.title}
                     </button>
+                    </div>
+                ))}  
+            </div>
+            <div class = "row">
+                {probs.triFigure.map((triFigure) =>(
+                    <div class = "column">
+                    <div class = 'triangle' key = {triFigure.id}> 
+                        {triFigure.title}
+                    </div>
                     </div>
                 ))}  
             </div>
@@ -85,7 +122,9 @@ function HourlyWeather(){
         <>
         <DisplayHourly
             hours={timeObj}
-            wIcon={iconObj}/>
+            wIcon={iconObj}
+            triFigure={triangleObj}
+            />
         <Line/>
         </>
     );
