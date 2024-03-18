@@ -1,0 +1,65 @@
+#hourlySection{
+    position: relative;
+    top: 10px
+}
+
+.column{
+    float: left;
+    width: 10%;
+    padding: 5px;
+}
+.row::after{
+
+    content: "";
+    clear:both;
+    display: table;
+}
+
+.hourlyIcon{
+    display: flex;
+    width: 45px;
+    height: 45px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.time{
+    width: 45px;
+    height: 28px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    flex-shrink: 0;
+    line-height: normal;
+    background-color: inherit;
+    position: relative;
+    top: 3px;
+    border: none;
+    
+}
+
+#triangle{
+    width: 22px;
+    height: 22px;
+    fill: linear-gradient(180deg, #FFF 40.5%, rgba(217, 217, 217, 0.00) 100%);
+
+}
+
+#line{
+    background-image: url(../assets/Rectangle1882.png);
+    width: 490px;
+    height: 10px;
+    background: linear-gradient(180deg, #D9D9D9 17%, rgba(217, 217, 217, 0.00) 100%);
+    position: relative;
+}
+
+
+
+
+
+
+
+
