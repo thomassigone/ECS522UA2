@@ -51,7 +51,7 @@
   border-radius: 40px;
   background: linear-gradient(180deg, rgba(255, 240, 227, 0.70) 0%, rgba(255, 203, 163, 0.70) 100%);
   height: auto;
-  width: 80%;
+  width: 90%;
   max-width: 450px;
   align-items: center;
  
@@ -100,8 +100,10 @@
 }
 
 .small-icon{
-  padding-top: 2px;
+  padding-top: 5px;
   padding-right: 2px;
+  height: 1em;
+  width: 1em;
 }
 
 
