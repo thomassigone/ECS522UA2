@@ -45,9 +45,6 @@ const timeObj = timeArr.map(
 })
 );
 
-function ClickedH({index}){
-    console.log(index);
-}
 
 
 function createTriangeArr (){
