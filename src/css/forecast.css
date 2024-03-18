@@ -1,0 +1,61 @@
+.forecast-box {
+    width: 400px;
+    height: 209px;
+    padding-left: 10px;
+    padding-right: 15px;
+    height: auto;
+    max-width: 450px;
+    align-items: center;
+    
+    border-radius: 20px;
+    background: linear-gradient(180deg, #D9D9D9 0%, rgba(217, 217, 217, 0.00) 100%);
+    backdrop-filter: blur(2px);
+}
+
+.forecast-text {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 1em;
+    font-style: normal;
+    line-height: 0.02em; 
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1%;
+}
+
+.forecast-headings {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding-top: 0.5em;
+
+    font-weight: bold;
+    color: #F9AF03;
+    text-shadow:
+    -0.02em -0.02em 0.02em #000,  
+     0.02em -0.02em 0.02em #000,
+    -0.02em  0.02em 0.02em #000,
+     0.02em  0.02em 0.02em #000;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.forecast-row {
+    display: grid;
+    grid-template-columns: repeat(5, 5fr);
+}
+
+ul {
+    list-style-type: none;
+}
+
+hr {
+    width: 90%;
+    border: none;
+    border-top: 0.5px solid #3f424d;
+}
+
+
