@@ -45,10 +45,16 @@ const timeObj = timeArr.map(
 })
 );
 
+function ClickedH({index}){
+    console.log(index);
+}
+
+
 function createTriangeArr (){
+    
     let triangeArr = [];
     let icon = TrianleImg
-    let visibleIndex = 4;
+    let visibleIndex = 0;
     for(let i = 0; i < length; i++){
         if (i !== visibleIndex){
             triangeArr.push(undefined);
@@ -69,10 +75,9 @@ const triangleObj = triangeArr.map(
 })
 );
 
-console.log("Triangle", triangeArr)
 
 // display weather icons and hours
-function DisplayHourly(probs){
+function DisplayHourly(probs,{onHoursClick}){
 
     return(
         <div id = "hourlySection">
@@ -86,7 +91,7 @@ function DisplayHourly(probs){
             <div class = "row">
                 {probs.hours.map((hour) =>(
                     <div class = "column">
-                    <button class = 'time' key = {hour.id}> 
+                    <button class = 'time' key = {hour.id} > 
                         {hour.title}
                     </button>
                     </div>
@@ -118,6 +123,8 @@ function Line(){
 
 
 function HourlyWeather(){
+    const [index, setIndex] = useState(0);
+    console.log("index", index);
     return(
         <>
         <DisplayHourly
@@ -125,6 +132,7 @@ function HourlyWeather(){
             wIcon={iconObj}
             triFigure={triangleObj}
             />
+        
         <Line/>
         </>
     );
