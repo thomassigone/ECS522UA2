@@ -48,6 +48,58 @@ function HourlyForecast({city}){
         }
       };
 
+      //generating customized weather alerts for each section of the box
+      const displayInfo = (info, value) => {
+        let message = "";
+        switch (info) {
+          case "temperature":
+            message = "The current temperature is ";
+            message += value;
+            message += " °C. \n";
+            message += value < 10 ? "It's quite cold, ensure you wear thermal layers." : value <= 20 ? "Ensure to dress appropriately for the hike." : value <= 30 ? "It's a pleasant temperature for hiking. Enjoy!" : "It's quite hot, stay hydrated and take regular breaks.";
+            break;
+
+          case "feelsLike":
+            message = "Feels like: the perceived temperature can differ from the actual temperature, affecting your comfort. \n \n";
+            message += "The current temperature feels like ";
+            message += value;
+            message += "°C \n";
+            message += value < 10 ? "It feels quite cold, ensure you wear windproof layers." : value <= 20 ? "Ensure to dress appropriately for the hike." : value <= 30 ? "It's a pleasant temperature for hiking. Enjoy!" : "It's quite hot, remember to wear a hat and light clothing.";
+            break;
+
+          case "humidity":
+            message = "Humidity: high humidity can make the temperature feel hotter and make physical activity more strenuous. \n \n"
+            message += "The current humidity is ";
+            message += value;
+            message += " %. \n";
+            message += value > 70 ? "Expect a damp environment and Remember to stay hydrated. Trails may be slippery. " : "Humidity conditions are currently good for hiking.";
+            break;
+
+          case "visibility":
+            message = "Visibility: low visibility can affect your ability to see the path and your surroundings. \n \n"
+            message += "The current visibility is ";
+            message += value;
+            message += " km. \n";
+            message += value < 10 ? "Very low visibility. Be cautious and stay on marked trails." : "Good visibility. Enjoy the views!";
+            break;
+          
+          case "windGust":
+            message = "Wind Gust: strong wind gusts can make hiking more challenging and make you feel colder. \n \n";
+            message += "The current wind gust is ";
+            message += value;
+            message += " km/h. \n";
+            message += value > 40 ? "Expect strong winds. Secure loose items and wear a windbreaker." : "Winds are mild. Enjoy your hike!";
+            break;
+          
+          default:
+            message += "Remember to check the weather before your hike!";
+            break;
+        }
+
+        alert(message);
+      }
+
+
       return(
         <>
             <div className='hourly-forecast'>
@@ -89,11 +141,11 @@ function HourlyForecast({city}){
                       {hourlyData ? (
                         <div className='right-box'>
                           {/* Data numbers */}
-                          <img className='imginfo' src={info} alt="info"></img><p className='datalabel'>Temperature: <div className='dataNumbers'>{hourlyData[hour].main.temp} °C</div></p>
-                          <img className='imginfo' src={info} alt="info"></img><p className='datalabel'>Feels like: <div className='dataNumbers'>{hourlyData[hour].main.feels_like} °C</div></p>
-                          <img className='imginfo' src={info} alt="info"></img><p className='datalabel'>Humidity: <div className='dataNumbers'>{hourlyData[hour].main.humidity}</div></p>
-                          <img className='imginfo' src={info} alt="info"></img><p className='datalabel'>Visibility: <div className='dataNumbers'>{hourlyData[hour].visibility / 1000} km</div></p>
-                          <img className='imginfo' src={info} alt="info"></img><p className='datalabel'>Wind gust: <div className='dataNumbers'>{hourlyData[hour].wind.gust} km/h</div></p>
+                          <img className='imginfo' src={info} alt="info" onClick={() => displayInfo("temperature", hourlyData[hour].main.temp)}></img><p className='datalabel'>Temperature: <div className='dataNumbers'>{hourlyData[hour].main.temp} °C</div></p>
+                          <img className='imginfo' src={info} alt="info" onClick={() => displayInfo("feelsLike", hourlyData[hour].main.feels_like)}></img><p className='datalabel'>Feels like: <div className='dataNumbers'>{hourlyData[hour].main.feels_like} °C</div></p>
+                          <img className='imginfo' src={info} alt="info" onClick={() => displayInfo("humidity", hourlyData[hour].main.humidity)}></img><p className='datalabel'>Humidity: <div className='dataNumbers'>{hourlyData[hour].main.humidity} %</div></p>
+                          <img className='imginfo' src={info} alt="info" onClick={() => displayInfo("visibility", hourlyData[hour].visibility / 1000)}></img><p className='datalabel'>Visibility: <div className='dataNumbers'>{hourlyData[hour].visibility / 1000} km</div></p>
+                          <img className='imginfo' src={info} alt="info" onClick={() => displayInfo("windGust", hourlyData[hour].wind.gust)}></img><p className='datalabel'>Wind gust: <div className='dataNumbers'>{hourlyData[hour].wind.gust} km/h</div></p>
                         </div>
                       ):(
                           <p>Loading Data</p>
