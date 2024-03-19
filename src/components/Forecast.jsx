@@ -12,7 +12,7 @@ const Forecast = ({city}) => {
           `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&units=metric&appid=2d8574f0c9e529f4c795e6b8e3ac25ef`
         );
         setForecastData(response.data.list);
-        console.log(response.data); //You can see all the weather data in console log
+        console.log("Forecast: ", response.data); //You can see all the weather data in console log
       } catch (error) {
         console.error(error);
       }

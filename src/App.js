@@ -5,6 +5,7 @@ import WeatherInfo from './components/WeatherInfo';
 import axios from 'axios';
 import Location from './Location';
 import HourlyWeather from './components/HourlyWeather';
+import HourlyForecast from './components/HourlyForecast';
 
 function App() {
   //used to store the city/location entered by the user
@@ -21,7 +22,7 @@ function App() {
           `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=2d8574f0c9e529f4c795e6b8e3ac25ef`
         );
         setWeatherData(response.data);
-        console.log(response.data); //You can see all the weather data in console log
+        console.log("Current weather: ", response.data); //You can see all the weather data in console log
       } catch (error) {
         console.error(error);
       }
@@ -44,7 +45,7 @@ function App() {
     <div className='container'>
       <Location data={fetchData} city={city} setCity={setCity}></Location>
       <WeatherInfo weatherData={weatherData}></WeatherInfo>
-      <HourlyWeather/>
+      <HourlyWeather city={city}/>
       <Provisions alert={alertData} showMockDataAlert={false}/>
       <Forecast city={city}/>
     </div>
