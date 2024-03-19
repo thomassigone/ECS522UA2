@@ -13,7 +13,7 @@ function App() {
 
   //used to store the weatherData from the API
   const [weatherData, setWeatherData] = useState(null);
-  const [alertData, setAlertData] = useState([]);
+  const [alertData, setAlertData] = useState({});
   
     //fecthing data from API based on user input every time a new city is entered
     const fetchData = useCallback(async () => {
@@ -31,7 +31,11 @@ function App() {
     useEffect(() => {
       fetchData();
       axios.get(`https://api.weatherapi.com/v1/forecast.json?key=aec898c8a5b64dc09d0195725241203&q=${city}&aqi=no&alerts=yes`)
-      .then(response => setAlertData(response.data.alerts.alert))
+      .then(response => {
+        if(response.data.alerts.alert.length !== 0) {
+          setAlertData(response.data.alerts.alert[0])
+        };
+      })
       .catch(error => console.error(error));
     }, [fetchData]);
 
@@ -42,7 +46,7 @@ function App() {
       <Location data={fetchData} city={city} setCity={setCity}></Location>
       <WeatherInfo weatherData={weatherData}></WeatherInfo>
       <HourlyWeather city={city}/>
-      <Provisions alerts={alertData}/>
+      <Provisions alert={alertData} showMockDataAlert={false}/>
       <Forecast city={city}/>
     </div>
     </>

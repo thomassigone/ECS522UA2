@@ -1,3 +1,59 @@
-#conditions {
-    color:aliceblue;
-} /* testing out if css works in provision component*/
+/*Import Poppins URL for font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*This is the main container for all the alert data regarding hiking conditions*/
+#provisions-container {
+    background-color:#FFE2C166;
+    padding: 20px 20px 20px 5px;
+    border-radius: 12px;
+    background: rgba(255, 226, 193, 0.4);
+    border-radius: 24px;
+    display:flex;
+    font-family:'Poppins';
+    margin-bottom:20px;
+    position:absolute;
+    left: 10px; /*Change Pos Absolute when full website is merged into main & starting responsive css*/
+    top: 820px; 
+}
+
+/*Styling for the alert message (Hiking unadvised) that should only be shown during severe alerts*/
+#severe-alert {
+    margin:0;
+    margin-left:-10px;
+    color:#FE4949;
+    font-weight:500;
+}
+
+.title {
+    margin:0;
+    font-style: normal;
+    letter-spacing: -0.08em;
+    color: #FFFFFF;
+    font-size:22px;
+}
+
+/*This is styling for margin when there is not a severe alert and the "Safe conditions" message needs to be pushed down further*/
+#margin-title {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+#hiking-img {
+    width:75px;
+    height:78px;
+    margin-right:20px;
+   
+}
+
+/*Remove default anchor tag styling and push further to the right*/
+#view-details-link {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    color: #F9AF03;
+    margin-left:30px; 
+}
+
+
+
+
