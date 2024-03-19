@@ -8,8 +8,8 @@
     width: 10%;
     padding: 5px;
 }
-.row::after{
 
+.row::after{
     content: "";
     clear:both;
     display: table;
@@ -38,22 +38,21 @@
     position: relative;
     top: 3px;
     border: none;
-    
 }
 
 #triangle{
     width: 22px;
     height: 22px;
     fill: linear-gradient(180deg, #FFF 40.5%, rgba(217, 217, 217, 0.00) 100%);
-
 }
 
 #line{
     background-image: url(../assets/Rectangle1882.png);
     width: 490px;
     height: 10px;
-    background: linear-gradient(180deg, #D9D9D9 17%, rgba(217, 217, 217, 0.00) 100%);
+    background: linear-gradient(180deg, #D9D9D9 17%, rgba(208, 30, 30, 0) 100%);
     position: relative;
+    top: 2px;
 }
 
 
