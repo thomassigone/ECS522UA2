@@ -101,7 +101,7 @@ function HourlyTemp(){
     for(let i = 0; i < length; i++){
         let hourlyTemerature = hourlyData[i].main.temp;
         console.log("hourly temp: ", hourlyTemerature);
-        tempArr[i]= Math.round(hourlyTemerature) + " °";
+        tempArr[i]= Math.round(parseInt(hourlyTemerature)) + " °";
     }
 
     // change temperature array to object
