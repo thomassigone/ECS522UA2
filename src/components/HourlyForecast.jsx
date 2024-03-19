@@ -1,7 +1,8 @@
 import '../css/hourlyForecast.css';
 import axios from 'axios';
 import {useState, useEffect, useCallback} from 'react';
-
+import footsteps from '../assets/footsteps.png';
+import info from '../assets/info.png';
 
 
 function HourlyForecast({city}){
@@ -45,7 +46,7 @@ function HourlyForecast({city}){
         else{
             return ((hourOption - 24) + ":00")
         }
-      } 
+      };
 
       return(
         <>
@@ -71,33 +72,33 @@ function HourlyForecast({city}){
                 </div>
                 <div className='hourly-weather-box'> 
                     <div className='left-box'>
-                        <p>Time : {getTime(hour)}</p>
-                        {hourlyData ? (
-                          <p>Description: {hourlyData[hour].weather[0].description}</p>)
-                          : (<p>Loading data</p>)
-                        }
-                        
+                        <div className='time'>
+                          {/* Time */}
+                          <p>{getTime(hour)}</p>
+                        </div>
+                        <div className='description'>
+                          {/* Description */}
+                          {hourlyData ? (
+                            <p>{hourlyData[hour].weather[0].description}</p>)
+                            : (<p>Loading data</p>)
+                          }
+                        </div>
+                        <img className='imgfootsteps' src={footsteps} alt="footsteps"></img>
                     </div>
                     
                       {hourlyData ? (
                         <div className='right-box'>
-                          <p>Temperature: {hourlyData[hour].main.temp} °C</p>
-                          <p>Feels like: {hourlyData[hour].main.feels_like} °C</p>
-                          <p>Humidity: {hourlyData[hour].main.humidity}</p>
-                          <p>Visibility: {hourlyData[hour].visibility / 1000} km</p>
-                          <p>Wind gust: {hourlyData[hour].wind.gust} km/h</p>
+                          {/* Data numbers */}
+                          <img className='imginfo' src={info} alt="info"></img><p className='datalabel'>Temperature: <div className='dataNumbers'>{hourlyData[hour].main.temp} °C</div></p>
+                          <img className='imginfo' src={info} alt="info"></img><p className='datalabel'>Feels like: <div className='dataNumbers'>{hourlyData[hour].main.feels_like} °C</div></p>
+                          <img className='imginfo' src={info} alt="info"></img><p className='datalabel'>Humidity: <div className='dataNumbers'>{hourlyData[hour].main.humidity}</div></p>
+                          <img className='imginfo' src={info} alt="info"></img><p className='datalabel'>Visibility: <div className='dataNumbers'>{hourlyData[hour].visibility / 1000} km</div></p>
+                          <img className='imginfo' src={info} alt="info"></img><p className='datalabel'>Wind gust: <div className='dataNumbers'>{hourlyData[hour].wind.gust} km/h</div></p>
                         </div>
                       ):(
                           <p>Loading Data</p>
                         
                       )}
-    
-                        
-                        
-                    
-                    
-                    
-
                 </div>
                 
             </div>

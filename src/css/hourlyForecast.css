@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Mono:wght@100..900&display=swap');
+
 .slider{
     width: 30em;
     margin-left: 10px;
@@ -10,12 +12,23 @@
 }
 
 .hourly-weather-box{
-    display: flex;
+    align-items: center;
+    width: 400px;
+    max-width: 450px;
+    margin-left: 0.3em;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    height: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex; 
     flex-direction: row;
     border-radius: 20px;
-    gap: 20%;
+    gap: 17%;
+    padding-top: 1em;
     background: linear-gradient(180deg, #D9D9D9 0%, rgba(217, 217, 217, 0.00) 100%);
 }
+
 .left-box{
     display: flex;
     flex-direction: column;
@@ -25,12 +38,57 @@
 }
 
 .right-box{
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    justify-content: right;
-    align-items: right;
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: right;
+    text-align: right;
+    align-items: right; */
     color: white;
+    font-family: Inter;
+    font-style: normal;
+    width: 50em;
 }
 
+.dataNumbers{
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: 25%;
+    justify-content: right;
+    text-align: right;
+    align-items: right;
+    color: white;
+    color: #F9AF03;
+    font-weight: 700;
+    font-style: normal;
+    text-shadow:
+    -0.02em -0.02em 0.02em #000,  
+     0.02em -0.02em 0.02em #000,
+    -0.02em  0.02em 0.02em #000,
+     0.02em  0.02em 0.02em #000;
+}
 
+.time{
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-family: Chivo Mono;
+}
+
+.description{
+    font-size: 1em;
+    width: 10em;
+}
+
+.imgfootsteps{
+    width: 50%;
+    height: 50%;
+    margin-left: 1em;
+}
+
+.imginfo{
+    display: grid;
+    flex-direction: column;
+}
+
+.datalabel{
+    margin: 0;
+}
