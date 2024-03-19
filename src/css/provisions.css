@@ -3,6 +3,8 @@
 
 /*This is the main container for all the alert data regarding hiking conditions*/
 #provisions-container {
+    margin-top: 25em;
+    margin-left: 11.6em;
     background-color:#FFE2C166;
     padding: 20px 20px 20px 5px;
     border-radius: 12px;
