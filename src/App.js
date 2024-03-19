@@ -5,7 +5,6 @@ import WeatherInfo from './components/WeatherInfo';
 import axios from 'axios';
 import Location from './Location';
 import HourlyWeather from './components/HourlyWeather';
-import HourlyForecast from './components/HourlyForecast';
 
 function App() {
   //used to store the city/location entered by the user

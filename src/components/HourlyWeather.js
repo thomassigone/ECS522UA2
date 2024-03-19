@@ -86,6 +86,7 @@ function HourlyWeather({city}){
                 </div>
             );
         }
+
         // Incase data is not available display loarding message
         else{
             console.log("Hourly forcast loading...");
@@ -98,36 +99,46 @@ function HourlyWeather({city}){
 
 function HourlyTemp(){
     const tempArr = new Array(length);
-    for(let i = 0; i < length; i++){
-        let hourlyTemerature = hourlyData[i].main.temp;
-        console.log("hourly temp: ", hourlyTemerature);
-        tempArr[i]= Math.round(parseInt(hourlyTemerature)) + " °";
+
+    if(hourlyData){
+        // add hourly forcast temprature to an array
+        for(let i = 0; i < length; i++){
+            let hourlyTemerature = hourlyData[i].main.temp;
+            console.log("hourly temp: ", hourlyTemerature);
+            tempArr[i]= Math.round(parseInt(hourlyTemerature)) + " °";
+        }
+
+        // change temperature array to object
+        const tempObj = tempArr.map(
+            (temp, i) => ({
+            id: i,
+            title: (temp)
+            })
+        );
+        
+        //display hourly temprature
+        return(
+            <div className = "row">
+                {tempObj.map((temp) =>(
+                    <div className = "column">
+                    <button className = 'time' key = {temp.id} > 
+                        {temp.title}
+                    </button>
+                    </div>
+                ))}  
+            </div>
+
+        );
     }
 
-    // change temperature array to object
-    const tempObj = tempArr.map(
-        (temp, i) => ({
-        id: i,
-        title: (temp)
-        })
-    );
-
-    return(
-        <div className = "row">
-            {tempObj.map((temp) =>(
-                <div className = "column">
-                <button className = 'time' key = {temp.id} > 
-                    {temp.title}
-                </button>
-                </div>
-            ))}  
-        </div>
-
-    );
+    else{
+        return(
+            <p>Loading hourly temperature forcast...</p>
+        );
+    }
 }
 
 
-    
 // create an array for hours and display form the current hour
 function ListHours (){
     let timeArr = new Array(length);
@@ -160,9 +171,6 @@ function ListHours (){
     );
 
 }
-
-
-
 
 
 return(
