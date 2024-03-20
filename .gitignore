@@ -1,5 +1,2 @@
 /node_modules
 .env
-HourlyIgnore.js
-HourlyForecast.jsx
-hourlyForecast.css
