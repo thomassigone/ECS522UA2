@@ -1,8 +1,9 @@
 .forecast-box {
     width: 400px;
-    height: 470px;
+    height: 209px;
     padding-left: 10px;
     padding-right: 15px;
+    height: auto;
     max-width: 450px;
     align-items: center;
     
