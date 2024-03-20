@@ -29,7 +29,7 @@ const getProvisionContainer = (state, title, img) => {
 // Render the mock alert data only if showMockDataAlert is set to true when passed in props
 const Provisions = (props) => {
     const { alert, showMockDataAlert } = props;
-    return <div id="test">
+    return <div>
         {
             showMockDataAlert ? getProvisionContainer(mockAlertData.state, mockAlertData.title, hikingDangerImg) : 
             (
