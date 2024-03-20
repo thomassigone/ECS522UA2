@@ -157,7 +157,7 @@ function ListHours (){
     return(
         <div className = "row">
             {timeObj.map((hour) =>(
-                <button className = "time" key = {hour.id} > 
+                <button className = "hour" key = {hour.id} > 
                     {hour.title}
                 </button>
             ))}  

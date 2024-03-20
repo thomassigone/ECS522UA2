@@ -30,17 +30,17 @@
     font-family: Inter;
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     flex-shrink: 0;
     line-height: normal;
     background-color: inherit;
     border: none;
 }
 
-.time{
-    color: brown;
+.hour{
+    color: rgba(165, 42, 42, 0.738);
     font-family: Inter;
-    font-size: 12px;
+    font-size: 16px;
     font-style: normal;
     font-weight:300;
     flex-shrink: 0;
