@@ -103,14 +103,14 @@ function HourlyForecast({city}){
       return(
         <>
             <div className='hourly-forecast'>
-                <div className='hours'>
+                {/* <div className='hours'>
                         <p>{getTime(0)}</p>
                         <p>{getTime(1)}</p>
                         <p>{getTime(2)}</p>
                         <p>{getTime(3)}</p>
                         <p>{getTime(4)}</p>
                         <p>{getTime(5)}</p>
-                </div>
+                </div> */}
                 <div className='hourly-slider'>
                     
                     <input className='slider'
