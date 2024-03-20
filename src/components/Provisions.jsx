@@ -19,7 +19,7 @@ const getProvisionContainer = (state, title, img) => {
         <div>
             {state === "Severe" ? <p id="severe-alert">Hiking unadvised</p> : ''} 
             <p className="title" id={state !== "Severe" ? 'margin-title':''}>{title}</p>
-            <a id="view-details-link" href="#">View details &gt;</a> 
+            <a id="view-details-link" target="_blank" href="https://lighthikinggear.com/blogs/hiking/a-guide-to-hiking-gear-for-every-weather">View details &gt;</a> 
         </div>
      </div>
 };
@@ -29,7 +29,7 @@ const getProvisionContainer = (state, title, img) => {
 // Render the mock alert data only if showMockDataAlert is set to true when passed in props
 const Provisions = (props) => {
     const { alert, showMockDataAlert } = props;
-    return <div id="test">
+    return <div>
         {
             showMockDataAlert ? getProvisionContainer(mockAlertData.state, mockAlertData.title, hikingDangerImg) : 
             (
