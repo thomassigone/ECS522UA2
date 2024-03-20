@@ -46,6 +46,7 @@ function App() {
       <Location data={fetchData} city={city} setCity={setCity}></Location>
       <WeatherInfo weatherData={weatherData}></WeatherInfo>
       <HourlyWeather city={city}/>
+      <HourlyForecast city={city}/>
       <Provisions alert={alertData} showMockDataAlert={false}/>
       <Forecast city={city}/>
     </div>

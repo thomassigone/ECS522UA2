@@ -12,7 +12,7 @@ import Sunny from '../assets/sunny.png'
 function HourlyWeather({city}){
 
     const [hourlyData, setHourlyData] = useState(null);
-    const length = 8;
+    const length = 6;
 
     // fetch hourly forcast data from API
     const fetchData = useCallback(async () => {
@@ -79,7 +79,7 @@ function HourlyWeather({city}){
             return(
                 <div className = "row">
                         {iconObj.map((wIcon) =>(
-                        <div className = "column" key={wIcon.id}>
+                        <div className = "icons" key={wIcon.id}>
                             {wIcon.title}
                         </div>
                     ))}
@@ -105,7 +105,7 @@ function HourlyTemp(){
         for(let i = 0; i < length; i++){
             let hourlyTemerature = hourlyData[i].main.temp;
             console.log("hourly temp: ", hourlyTemerature);
-            tempArr[i]= Math.round(parseInt(hourlyTemerature)) + " °";
+            tempArr[i]= Math.round(parseInt(hourlyTemerature)) + "°";
         }
 
         // change temperature array to object
@@ -120,11 +120,9 @@ function HourlyTemp(){
         return(
             <div className = "row">
                 {tempObj.map((temp) =>(
-                    <div className = "column">
-                    <button className = 'time' key = {temp.id} > 
+                    <button className = "temp" key = {temp.id} > 
                         {temp.title}
                     </button>
-                    </div>
                 ))}  
             </div>
 
@@ -142,9 +140,8 @@ function HourlyTemp(){
 // create an array for hours and display form the current hour
 function ListHours (){
     let timeArr = new Array(length);
-    let startTime = new Date().getHours();
-    timeArr[0] = "Now";
-    for(let i = 1; i < length; i++){
+    let startTime = new Date().getHours()+1;
+    for(let i = 0; i < length; i++){
         timeArr[i] = ((startTime+i)%24) + ":00";
     }
 
@@ -160,14 +157,11 @@ function ListHours (){
     return(
         <div className = "row">
             {timeObj.map((hour) =>(
-                <div className = "column">
-                <button className = 'time' key = {hour.id} > 
+                <button className = "time" key = {hour.id} > 
                     {hour.title}
                 </button>
-                </div>
             ))}  
         </div>
-
     );
 
 }
@@ -175,9 +169,11 @@ function ListHours (){
 
 return(
     <>
+    <section className='box'>
         <HourlyForcastIcons/>
         <HourlyTemp/>
         <ListHours/>
+    </section>
     </>
     );
 }
