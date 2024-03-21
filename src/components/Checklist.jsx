@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Checklist(){
     return (
         <div className='checklist-box'>
-            <Link to="/ChecklistForm" target="_blank">Click here to plan your hike</Link>
+            <Link to="/ChecklistForm" target="_blank">Click here to plan your hike &gt;</Link>
         </div>
     );
 };

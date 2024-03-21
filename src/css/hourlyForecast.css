@@ -17,9 +17,8 @@
 
 .hourly-weather-box{
     align-items: center;
-    width: 400px;
-    max-width: 450px;
-    margin-left: 0.3em;
+    max-width: 26em;
+    margin-left: 0em;
     margin-bottom: 20px;
     margin-top: 10px;
     height: auto;
@@ -42,19 +41,12 @@
 }
 
 .right-box{
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: right;
-    text-align: right;
-    align-items: right; */
     color: white;
     font-style: normal;
     width: 50em;
 }
 
 .dataNumbers{
-    /* display: flex; */
-    /* flex-direction: column; */
     gap: 25%;
     justify-content: right;
     text-align: right;
@@ -71,12 +63,12 @@
 }
 
 .time{
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 3rem;
+    margin-bottom: -1.4em;
 }
 
 .description{
-    font-size: 1em;
+    font-size: 1.1em;
     width: 10em;
 }
 
