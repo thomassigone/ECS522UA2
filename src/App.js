@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Provisions from "./components/Provisions";
 import Forecast from "./components/Forecast";
 import WeatherInfo from './components/WeatherInfo';
@@ -6,6 +8,8 @@ import axios from 'axios';
 import Location from './Location';
 import HourlyWeather from './components/HourlyWeather';
 import HourlyForecast from './components/HourlyForecast';
+import Checklist from './components/Checlist';
+import ChecklistForm from './components/ChecklistForm';
 
 function App() {
   //used to store the city/location entered by the user
@@ -39,6 +43,8 @@ function App() {
       .catch(error => console.error(error));
     }, [fetchData]);
 
+    
+
   
   return (
     <>
@@ -47,12 +53,25 @@ function App() {
       <WeatherInfo weatherData={weatherData}></WeatherInfo>
       <HourlyWeather city={city}/>
       <HourlyForecast city={city}/>
-      <Provisions alert={alertData} showMockDataAlert={false}/>
+      <div className='extensions'>
+        <Provisions alert={alertData} showMockDataAlert={false}/>
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<Checklist/>} />
+            <Route exact path="/ChecklistForm" element={<ChecklistForm/>} />
+          </Routes>
+        </Router>
+      </div>
+      
       <Forecast city={city}/>
     </div>
+    <ChecklistForm/>
     </>
+
+    
     
   );
 }
 
 export default App;
+

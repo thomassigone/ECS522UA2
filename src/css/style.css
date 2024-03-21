@@ -24,6 +24,12 @@
   background-size: cover;
 }
 
+.extensions{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .location-box{
   display: flex;
   flex-direction: row;
@@ -108,5 +114,7 @@
   width: 1em;
   height: auto; 
 }
+
+
 
 

@@ -1,0 +1,85 @@
+.checklist-box{
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(255, 226, 193, 0.4);
+    width: 50px;
+    height: 50px;
+    margin-right: 50px;
+    
+}
+
+a:link { 
+    text-decoration: none; 
+} 
+a:visited { 
+    text-decoration: none; 
+} 
+a:hover { 
+    text-decoration: none; 
+    color: blue;
+} 
+a:active { 
+    text-decoration: none; 
+}
+a{
+    color: White;
+    font-weight: bold;
+}
+
+.checklist-body{
+    position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: url(../assets/background.jpeg);
+    min-width: 550px;
+    width: 100%;
+    
+    height: auto;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.checklist{
+    padding-left: 20px;
+    border-radius: 12px;
+    background: rgba(255, 226, 193, 0.4);
+    width: 80%;
+}
+.checkbox{  
+    margin-bottom: 20px;
+}
+
+label{
+    color: black;
+    font-weight: bold;
+    font-size: 2em;
+    margin-left: 5px;
+    
+}
+
+.submit-button{
+    margin-top: 20px;
+    background: hsl(39, 90%, 60%);
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 2em;
+}
+
+.submit-button:hover{
+    background: rgb(0, 245, 0);
+    cursor: pointer;
+}
+
+.output{
+    padding: 10px 20px;
+    font-size: 2em;
+    font-weight: bold;
+    background: rgba(255, 226, 193, 0.4);
+    width: 80%;
+    border-radius: 40px;
+}
