@@ -2,7 +2,7 @@
 
 ## Group 79
 
-## Instructions on running
+## Instructions on running the application
 
 Extract the .zip file and from the root of the directory that the file was extracted to first run npm install 
 which will install all dependencies from package.json such as **axios** and **react-router-dom**:
