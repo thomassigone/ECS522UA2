@@ -1,16 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
 
 function Checklist(){
     
-    const navigate = useNavigate();
+    /*const navigate = useNavigate();
     
 
     const handleClick = () => {
         navigate('/ChecklistForm');; 
-    };
+    };*/ 
+
+    //Don't think we need the above
 
     return (
         <div className='checklist-box'>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 import Provisions from "./components/Provisions";
 import Forecast from "./components/Forecast";
@@ -8,7 +8,7 @@ import axios from 'axios';
 import Location from './Location';
 import HourlyWeather from './components/HourlyWeather';
 import HourlyForecast from './components/HourlyForecast';
-import Checklist from './components/Checlist';
+import Checklist from './components/Checklist';
 import ChecklistForm from './components/ChecklistForm';
 
 function App() {
@@ -43,33 +43,34 @@ function App() {
       .catch(error => console.error(error));
     }, [fetchData]);
 
-    
 
+
+   function MainPage() {
+       return <>
+       <div className='container'>
+        <Location data={fetchData} city={city} setCity={setCity}></Location>
+        <WeatherInfo weatherData={weatherData}></WeatherInfo>
+        <HourlyWeather city={city}/>
+        <HourlyForecast city={city}/>
+        <div className='extensions'>
+          <Provisions alert={alertData} showMockDataAlert={false}/>
+          <Checklist/>
+        </div>
+        <Forecast city={city}/>
+        </div>
+       </>
+   }
   
   return (
     <>
-    <div className='container'>
-      <Location data={fetchData} city={city} setCity={setCity}></Location>
-      <WeatherInfo weatherData={weatherData}></WeatherInfo>
-      <HourlyWeather city={city}/>
-      <HourlyForecast city={city}/>
-      <div className='extensions'>
-        <Provisions alert={alertData} showMockDataAlert={false}/>
-        <Router>
-          <Routes>
-            <Route exact path="/" element={<Checklist/>} />
-            <Route exact path="/ChecklistForm" element={<ChecklistForm/>} />
-          </Routes>
-        </Router>
-      </div>
-      
-      <Forecast city={city}/>
-    </div>
-    <ChecklistForm/>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={MainPage()}></Route>
+        <Route exact path="/ChecklistForm" element={<ChecklistForm/>}></Route>
+      </Routes>
+    </Router>
     </>
 
-    
-    
   );
 }
 
