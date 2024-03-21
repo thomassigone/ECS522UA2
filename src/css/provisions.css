@@ -14,7 +14,7 @@
     position:relative;
     /*left: 10px; /*Change Pos Absolute when full website is merged into main & starting responsive css*/
     top: 1px;
-    width: 400px;
+    width: 300px;
 }
 
 /*Styling for the alert message (Hiking unadvised) that should only be shown during severe alerts*/

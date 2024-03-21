@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+
 import Provisions from "./components/Provisions";
 import Forecast from "./components/Forecast";
 import WeatherInfo from './components/WeatherInfo';
@@ -6,6 +8,8 @@ import axios from 'axios';
 import Location from './Location';
 import HourlyWeather from './components/HourlyWeather';
 import HourlyForecast from './components/HourlyForecast';
+import Checklist from './components/Checklist';
+import ChecklistForm from './components/ChecklistForm';
 
 function App() {
   //used to store the city/location entered by the user
@@ -39,20 +43,36 @@ function App() {
       .catch(error => console.error(error));
     }, [fetchData]);
 
+
+
+   function MainPage() {
+       return <>
+       <div className='container'>
+        <Location data={fetchData} city={city} setCity={setCity}></Location>
+        <WeatherInfo weatherData={weatherData}></WeatherInfo>
+        <HourlyWeather city={city}/>
+        <HourlyForecast city={city}/>
+        <div className='extensions'>
+          <Provisions alert={alertData} showMockDataAlert={false}/>
+          <Checklist/>
+        </div>
+        <Forecast city={city}/>
+        </div>
+       </>
+   }
   
   return (
     <>
-    <div className='container'>
-      <Location data={fetchData} city={city} setCity={setCity}></Location>
-      <WeatherInfo weatherData={weatherData}></WeatherInfo>
-      <HourlyWeather city={city}/>
-      <HourlyForecast city={city}/>
-      <Provisions alert={alertData} showMockDataAlert={false}/>
-      <Forecast city={city}/>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={MainPage()}></Route>
+        <Route exact path="/ChecklistForm" element={<ChecklistForm/>}></Route>
+      </Routes>
+    </Router>
     </>
-    
+
   );
 }
 
 export default App;
+
