@@ -15,11 +15,11 @@ const mockAlertData = {
 // TS: Need to change view details href to link to somewhere
 const getProvisionContainer = (state, title, img) => {
      return <div id="provisions-container">
-        <img id="hiking-img" src={img}></img>
+        <img id="hiking-img" src={img} alt="hiker svg"></img>
         <div>
             {state === "Severe" ? <p id="severe-alert">Hiking unadvised</p> : ''} 
             <p className="title" id={state !== "Severe" ? 'margin-title':''}>{title}</p>
-            <a id="view-details-link" target="_blank" href="https://lighthikinggear.com/blogs/hiking/a-guide-to-hiking-gear-for-every-weather">View details &gt;</a> 
+            <a id="view-details-link" target="_blank" rel="noreferrer" href="https://lighthikinggear.com/blogs/hiking/a-guide-to-hiking-gear-for-every-weather">View details &gt;</a> 
         </div>
      </div>
 };
