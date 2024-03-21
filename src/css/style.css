@@ -38,7 +38,7 @@
 
 .location{
   width: 8em;
-  color: rgba(0, 0, 0, 0.62);
+  color: brown;
   text-align: center;
   font-family: Poppins;
   background-color: transparent;
@@ -69,7 +69,7 @@
 }
 
 .temperature-text, .weather-description-text{
-  color: #FFF;
+  color: brown;
   font-family: Poppins;
   margin: 0;
   padding: 0;
@@ -97,7 +97,7 @@
 .weather-grid-item{
   display: flex;
   flex-direction: row;
-  color: #FFF;
+  color: brown;
   font-family: Poppins;
   font-size: 1em;
 }
