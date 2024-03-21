@@ -1,4 +1,4 @@
-## ECS522 (GUI) Weather App (Assigment 2)
+## ECS522U (GUI) Weather App (Assigment 2)
 
 ## Group 79
 
