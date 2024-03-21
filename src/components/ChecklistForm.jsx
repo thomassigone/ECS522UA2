@@ -22,7 +22,7 @@ function ChecklistForm(){
     const checkCount = () => {
         if (checkedCount === 0) {
             setMessage("You are not ready for hiking!!!!");
-            setMessageColour("red");
+            setMessageColour("#c72626"); //red
           } else if (checkedCount < 5) {
             setMessage("You need more preperation for hiking.");
             setMessageColour("orange");  
@@ -39,7 +39,7 @@ function ChecklistForm(){
     return(<>
         <div className='checklist-body'>
             <h1 className='checklist-header'>Hiking Checklist</h1>
-            <p>Tick all the items you have to see how prepared you are for hiking:</p>
+            <p className='tick'>Tick all the items you have to see how prepared you are for hiking:</p>
             <div className='checklist'>
                 <input type="checkbox" id="checkbox1" className='checkbox' onChange={handleCheckboxChange} />
                 <label htmlFor="checkbox1">Hiking Pack</label>
