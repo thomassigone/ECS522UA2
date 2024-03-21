@@ -2,10 +2,14 @@ import '../css/checklist.css';
 import React, { useState } from 'react';
 
 function ChecklistForm(){
+    //keeps count of the boxes ticked by the user
     const [checkedCount, setCheckedCount] = useState(0);
+    //change message displayed depending on the number of ticks
     const [message, setMessage] = useState("Click on submit to see how prepared you are");
+    //change message colour displayed depending on the number of ticks
     const [messageColour, setMessageColour] = useState("white");
 
+    //keeps track of the numbers of boxes ticked
     const handleCheckboxChange = (event) => {
         if (event.target.checked) {
         setCheckedCount(checkedCount + 1);
@@ -14,7 +18,7 @@ function ChecklistForm(){
         }
     };
 
-
+    //display message according to the number of boxes ticked, with appropriate colour
     const checkCount = () => {
         if (checkedCount === 0) {
             setMessage("You are not ready for hiking!!!!");
