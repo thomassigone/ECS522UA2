@@ -1,17 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+//navigates to a another component(ChecklistForm) on a new page
 function Checklist(){
-    
-    /*const navigate = useNavigate();
-    
-
-    const handleClick = () => {
-        navigate('/ChecklistForm');; 
-    };*/ 
-
-    //Don't think we need the above
-
     return (
         <div className='checklist-box'>
             <Link to="/ChecklistForm" target="_blank">Click here to plan your hike</Link>
