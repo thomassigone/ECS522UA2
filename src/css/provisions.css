@@ -4,7 +4,9 @@
 /*This is the main container for all the alert data regarding hiking conditions*/
 #provisions-container {
     background-color:#FFE2C166;
-    padding: 20px 20px 20px 5px;
+    padding: 5px;
+    padding-bottom: 20px;
+    padding-top: 10px;
     border-radius: 12px;
     background: rgba(255, 226, 193, 0.4);
     border-radius: 24px;
@@ -13,15 +15,17 @@
     margin-bottom:20px;
     position:relative;
     /*left: 10px; /*Change Pos Absolute when full website is merged into main & starting responsive css*/
-    top: 1px;
-    width: 400px;
+    /* top: 1px; */
+    width: 280px;
+    height: 70px;
+    /* margin-left: 1.3em */
 }
 
 /*Styling for the alert message (Hiking unadvised) that should only be shown during severe alerts*/
 #severe-alert {
     margin:0;
     margin-left:-10px;
-    color:#FE4949;
+    color:#fe4949e1;
     font-weight:500;
 }
 
@@ -52,9 +56,10 @@
     font-style: normal;
     font-weight: 400;
     color: #F9AF03;
-    margin-left:30px; 
+    margin-left: 3.5em; 
 }
 
-
-
-
+#view-details-link:hover { 
+    text-decoration: none; 
+    color: white;
+} 

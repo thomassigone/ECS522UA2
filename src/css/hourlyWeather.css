@@ -27,7 +27,7 @@
 
 .temp{
     color:brown;
-    font-family: Inter;
+
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -39,7 +39,6 @@
 
 .hour{
     color: rgba(165, 42, 42, 0.738);
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight:300;

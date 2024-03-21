@@ -1,0 +1,99 @@
+/*Import Poppins URL for font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.checklist-box{
+    padding: 20px;
+    padding-top: 30px;
+    border-radius: 24px;
+    background: rgba(255, 226, 193, 0.4);
+    width: 111px;
+    height: 50px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.tick {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 30px;
+}
+
+a:link { 
+    text-decoration: none; 
+} 
+a:visited { 
+    text-decoration: none; 
+} 
+a:hover { 
+    text-decoration: none; 
+    color: #F9AF03;
+} 
+a:active { 
+    text-decoration: none; 
+}
+a{
+    color: White;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.checklist-body{
+    position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family:'Poppins';
+
+    background: url(../assets/background.jpeg);
+    min-width: 550px;
+    width: 100%;
+    
+    height: auto;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.checklist{
+    padding-left: 20px;
+    border-radius: 12px;
+    background: rgba(255, 226, 193, 0.4);
+    width: 80%;
+}
+.checkbox{  
+    margin-bottom: 20px;
+}
+
+label{
+    color: black;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-left: 5px;
+    
+}
+
+.submit-button{
+    margin-top: 20px;
+    font-family:'Poppins';
+    background: hsl(39, 90%, 60%);
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 2em;
+}
+
+.submit-button:hover{
+    background: rgb(0, 245, 0);
+    cursor: pointer;
+}
+
+.output{
+    padding: 10px 20px;
+    font-size: 2em;
+    font-weight: bold;
+    background: rgba(255, 226, 193, 0.4);
+    width: 80%;
+    border-radius: 40px;
+}

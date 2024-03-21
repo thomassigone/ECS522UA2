@@ -17,9 +17,8 @@
 
 .hourly-weather-box{
     align-items: center;
-    width: 400px;
-    max-width: 450px;
-    margin-left: 0.3em;
+    max-width: 26em;
+    margin-left: 0em;
     margin-bottom: 20px;
     margin-top: 10px;
     height: auto;
@@ -30,7 +29,8 @@
     border-radius: 20px;
     gap: 17%;
     padding-top: 1em;
-    background: linear-gradient(180deg, #D9D9D9 0%, rgba(217, 217, 217, 0.00) 100%);
+    padding-bottom: 1em;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.714) 0%, rgba(217, 217, 217, 0.043) 100%);
 }
 
 .left-box{
@@ -42,20 +42,12 @@
 }
 
 .right-box{
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: right;
-    text-align: right;
-    align-items: right; */
     color: white;
-    font-family: Inter;
     font-style: normal;
     width: 50em;
 }
 
 .dataNumbers{
-    /* display: flex; */
-    /* flex-direction: column; */
     gap: 25%;
     justify-content: right;
     text-align: right;
@@ -72,13 +64,12 @@
 }
 
 .time{
-    font-size: 2rem;
-    margin-bottom: 30px;
-    font-family: Chivo Mono;
+    font-size: 3rem;
+    margin-bottom: -1.4em;
 }
 
 .description{
-    font-size: 1em;
+    font-size: 1.1em;
     width: 10em;
 }
 

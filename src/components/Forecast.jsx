@@ -2,10 +2,11 @@ import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import '../css/forecast.css';
 
+//7-day forecast component
 const Forecast = ({city}) => {
-    //const [city, setCity] = useState('');
     const [forecastData, setForecastData] = useState(null);
   
+    //fetch forecast data from API
     const fetchData = useCallback(async () => {
       try {
         const response = await axios.get(
@@ -18,10 +19,13 @@ const Forecast = ({city}) => {
       }
     }, [city]);
 
+    //when city input changes the effect will run, and fetch new data from the API
     useEffect(() => {
         fetchData();
     }, [fetchData]);
 
+    //function to convert timetstamp returned from API call into weekday abbreviations
+    //used for the first column in the 7-day forecast box
     const formatDate = (timestamp) => {
         const date = new Date(timestamp*1000);
         const weekDayIndex = date.getDay();
@@ -59,7 +63,7 @@ const Forecast = ({city}) => {
                 </div>
             </>
         ) : (
-            <p>Loading weather data...</p>
+            <p>Loading 7-day forecast...</p>
         )}
     </div>
     </>   
